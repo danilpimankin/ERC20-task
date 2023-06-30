@@ -120,7 +120,7 @@ describe("MyToken contract", function () {
       .withArgs(owner.address, "0x0000000000000000000000000000000000000000", ethers.utils.parseEther("5"))
     })
 
-    it.only("allowance check", async () => {
+    it("allowance check", async () => {
       let tx = await myToken.approve(user1.address, 10000)
       tx.wait() 
       expect(await myToken.allowance(owner.address, user1.address))
